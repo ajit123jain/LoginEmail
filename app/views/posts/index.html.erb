@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h1>Authors</h1>
+<h1>Posts</h1>
 <div class="well">
-  <%= link_to 'New Author', new_author_path , remote: true, class: "btn btn-default" ,:id => "new_author" %>
+  <%= link_to 'New Email', new_post_path , remote: true, class: "btn btn-default" ,:id => "new_author" %>
 </div>
 <div class="new-author"></div>
 <table class="table table-bordered table-striped">
@@ -18,7 +18,7 @@
    <%= render 'index' %>
   </tbody>
 </table>
-<div id="author-modal" class="modal fade">
+<div id="post-modal" class="modal fade">
 </div>
 
 

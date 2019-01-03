@@ -15,6 +15,7 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
+  # has_many: posts
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

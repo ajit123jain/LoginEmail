@@ -9,4 +9,18 @@ class UserNotifier < ActionMailer::Base
     mail( :to => 'ajitkumarjain123@gmail.com',
     :subject => 'Thanks for signing up for our amazing app' )
   end
+
+  def author_creation_email(author)
+    @user = author
+    mail( :to => @user.email,
+    :subject => 'You have added as Author.' )
+  end
+
+  def post_submit(post)
+    @user = post
+    mail( :to => @user.to,
+    :subject => @user.subject,
+    :content => @user.content )
+    render :nothing => true
+  end
 end

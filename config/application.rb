@@ -12,6 +12,7 @@ module Email
     config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
+    Dotenv.load *Dir.glob(Rails.root.join("config/environments/#{Rails.env}.env"), File::FNM_DOTMATCH)
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end

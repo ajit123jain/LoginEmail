@@ -6,23 +6,23 @@
   <p id="notice"><%= notice %></p>
   <h1>Authors</h1>
   <div class="well">
-    <%= link_to 'New Author', new_author_path , remote: true, class: "btn btn-default" ,:id => "new_author" %>
+    <%= link_to 'New Post', new_post_path , remote: true, class: "btn btn-default" ,:id => "new_author" %>
   </div>
   <div class="new-author"></div>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Author Name</th>
-        <th>View</th>
-        <th>Edit</th>
-        <th>Destroy</th>
+        <th>Sender Email</th>
+        <th>Receiver Email</th>
+        <th>Subject</th>
+        <th>Content</th>
       </tr>
     </thead>
     <tbody class="author-index"> 
      <%= render 'index' %>
     </tbody>
   </table>
-  <div id="author-modal" class="modal fade">
+  <div id="post-modal" class="modal fade">
   </div>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link btn btn-sm'  %> |
