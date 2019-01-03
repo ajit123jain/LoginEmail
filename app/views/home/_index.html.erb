@@ -1,0 +1,8 @@
+ <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= link_to 'Show', author, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_author_path(author),remote: true ,class: "btn btn-primary" ,:id => "edit"  %></td>
+        <td><%= link_to "Delete", author_delete_path(author), remote: true, class: "btn btn-danger" ,:id => "destroy"  %></td>
+      </tr>
+    <% end %>

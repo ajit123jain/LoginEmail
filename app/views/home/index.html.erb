@@ -1,0 +1,34 @@
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <p id="notice"><%= notice %></p>
+  <h1>Authors</h1>
+  <div class="well">
+    <%= link_to 'New Author', new_author_path , remote: true, class: "btn btn-default" ,:id => "new_author" %>
+  </div>
+  <div class="new-author"></div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Author Name</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tbody class="author-index"> 
+     <%= render 'index' %>
+    </tbody>
+  </table>
+  <div id="author-modal" class="modal fade">
+  </div>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link btn btn-sm'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link btn btn-sm'  %>
+<% end %>
+</p>
+
+
+

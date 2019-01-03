@@ -1,0 +1,15 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+    <h3>Delete Author</h3>
+  </div>
+  <div class="modal-body">
+  <ul class="errors"></ul>
+  Are you sure you wish to delete <b><%= @author.name %></b>?
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Yes, Delete This Post", author_path(@author), method: :delete, remote: true, class: "btn btn-danger" ,:id => "delete" %>
+    <%= link_to "No, Please Don't", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
+  </div>
+  </div>
+</div>
